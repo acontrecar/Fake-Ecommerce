@@ -1,0 +1,23 @@
+<div class="navSidebar">
+  <nav>
+    <img (click)="toggleSidebar()" src="../../../assets/hamburgerMenu.svg" alt="">
+
+    <input type="text" placeholder="Busca tu producto deseado...">
+
+    <img src="../../../assets/shoppingCart.svg" alt="">
+
+  </nav>
+
+  <div class="sidebar" [ngClass]="{'open' : isSidebarOpen()}">
+    <!-- Contenido del sidebar -->
+
+    <div class="titleImg">
+      <h3>Categorias:</h3>
+      <img src="../../../../assets/closeCircle.svg" alt="" (click)="closeSidebar()">
+    </div>
+
+    <ul class="category-list">
+      <li *ngFor="let item of categories()" class="category-list-item"><a>{{item}}</a></li>
+    </ul>
+  </div>
+</div>
