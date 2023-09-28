@@ -32,18 +32,16 @@ nav {
 }
 
 .sidebar {
-  padding-top: 10%;
+  padding-top: 13%;
   display: flex;
   flex-direction: column;
   position: fixed;
   top: 0;
-  left: -250px; /* Inicialmente oculto fuera de la pantalla */
+  left: -250px;
   width: 250px;
   height: 100vh;
   background-color: #cfcece;
-  transition: left 0.3s ease; /* Animación de deslizamiento suave */
-  // left: 0;
-  // align-items: center;
+  transition: left 0.3s ease;
   justify-content: center;
   overflow-y: auto;
 
@@ -79,18 +77,21 @@ nav {
       display: block;
       transition: background-color 0.2s ease;
 
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
       cursor: pointer;
       &:hover {
         background-color: #555;
       }
     }
   }
-
-  @media screen and (max-width: 470px) {
-    width: 100vw;
-  }
 }
 
 .sidebar.open {
-  left: 0; /* Abierto a la posición izquierda */
+  left: 0;
+  @media screen and (max-width: 470px) {
+    width: 100%;
+  }
 }

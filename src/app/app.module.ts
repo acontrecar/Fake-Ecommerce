@@ -6,10 +6,17 @@ import { AppComponent } from './app.component';
 import { LayoutComponent } from './shared/layout/layout.component';
 import { HttpClientModule } from '@angular/common/http';
 import { NavSideBarComponent } from './shared/components/nav-side-bar/nav-side-bar.component';
+import { HomePageComponent } from './products/pages/home-page/home-page.component';
+import { ProductsModule } from './products/products.module';
 
 @NgModule({
-  declarations: [AppComponent, LayoutComponent, NavSideBarComponent],
-  imports: [BrowserModule, AppRoutingModule, HttpClientModule],
+  declarations: [
+    AppComponent,
+    LayoutComponent,
+    NavSideBarComponent,
+    HomePageComponent,
+  ],
+  imports: [BrowserModule, AppRoutingModule, HttpClientModule, ProductsModule],
   providers: [],
   bootstrap: [AppComponent],
 })
