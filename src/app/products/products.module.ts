@@ -3,10 +3,18 @@ import { CommonModule } from '@angular/common';
 
 import { ProductsRoutingModule } from './products-routing.module';
 import { CategoryProductsComponent } from './pages/category-products/category-products.component';
-import { ProductListCategoryComponent } from './components/product-list-category/product-list-category.component';
+import { HomePageComponent } from './pages/home-page/home-page.component';
+import { ListProductsComponent } from './components/list-products/list-products.component';
+import { ProductPageComponent } from './pages/product-page/product-page.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
-  declarations: [CategoryProductsComponent, ProductListCategoryComponent],
-  imports: [CommonModule, ProductsRoutingModule],
+  declarations: [
+    CategoryProductsComponent,
+    HomePageComponent,
+    ListProductsComponent,
+    ProductPageComponent,
+  ],
+  imports: [CommonModule, ProductsRoutingModule, FormsModule],
 })
 export class ProductsModule {}

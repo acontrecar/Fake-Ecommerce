@@ -1,0 +1,47 @@
+<div *ngIf="product">
+  <div class="grid">
+    <div class="images">
+      <div class="main-image">
+        <img [src]="product.thumbnail" alt="{{ product.title }}" />
+      </div>
+      <div class="secondary-images">
+        <img *ngFor="let item of product.images" [src]="item" alt="Image" />
+      </div>
+    </div>
+
+    <div class="descriptions">
+      <h1>{{ product.title }}</h1>
+      <p>{{ product.description }}</p>
+
+      <div class="subdescription">
+        <p><span>Rating :</span> {{product.rating}}</p>|
+        <p><span>Brand :</span> {{product.brand}}</p>|
+        <p class="pointer" [routerLink]="['/category', product.category ]"><span>Categoria :</span> {{product.category}}
+        </p>
+      </div>
+
+      <div class="price">
+        <div class="first-row">
+          <p class="original-price">{{ product.price }}$</p>
+          <p>(original)</p>
+        </div>
+        <div class="second-row">
+          <h3>{{ (product.price - (product.price * product.discountPercentage/100)) | number:'1.2-2'}}$</h3>
+          <p>{{ product.discountPercentage }}% desc</p>
+        </div>
+      </div>
+
+      <div class="quantity">
+        <div class="quantity-input">
+          <button (click)="decrease(1)">-</button>
+          <input type="text" [(ngModel)]="quantity" />
+          <button (click)="increase(1)">+</button>
+        </div>
+      </div>
+
+      <div class="add-cart">
+        <button class="btn-add-cart">Add to cart</button>
+      </div>
+    </div>
+  </div>
+</div>

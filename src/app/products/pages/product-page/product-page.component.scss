@@ -1,0 +1,142 @@
+.grid {
+  display: flex;
+  gap: 20px;
+
+  padding: 5%;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
+  .images {
+    flex: 1;
+
+    .main-image img {
+      max-width: 100%;
+      height: auto;
+    }
+
+    .secondary-images {
+      display: flex;
+      gap: 10px;
+
+      img {
+        max-width: 80px;
+        height: auto;
+      }
+    }
+  }
+
+  .descriptions {
+    flex: 1;
+    padding: 20px;
+
+    .add-cart {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 5%;
+
+      button {
+        background-color: #8f8f8f;
+        color: white;
+        border: none;
+        border-radius: 4px;
+        padding: 5px 10px;
+        cursor: pointer;
+
+        padding: 3%;
+
+        &:hover {
+          background-color: #6f6f6f;
+        }
+      }
+    }
+    .quantity {
+      display: inline-block;
+      padding: 5px;
+    }
+
+    .quantity-input {
+      display: flex;
+      align-items: center;
+
+      button {
+        background-color: #8f8f8f;
+        color: white;
+        border: none;
+        border-radius: 4px;
+        padding: 5px 10px;
+        cursor: pointer;
+
+        &:hover {
+          background-color: #6f6f6f;
+        }
+      }
+
+      input {
+        width: 30px;
+        text-align: center;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        margin: 0 5px;
+        padding: 5px;
+      }
+    }
+
+    h1 {
+      font-size: 24px;
+      margin: 0;
+    }
+
+    p {
+      font-size: 16px;
+      margin: 10px 0;
+    }
+
+    .subdescription {
+      display: flex;
+      gap: 10px;
+      margin-bottom: 10px;
+
+      span {
+        font-weight: bold;
+      }
+
+      p {
+        margin: 0;
+      }
+
+      .pointer {
+        cursor: pointer;
+      }
+    }
+
+    .price {
+      display: flex;
+      flex-direction: column; /* Apila los elementos verticalmente */
+      margin-top: 5%;
+      margin-bottom: 5%;
+
+      /* Estilos para la primera fila */
+      .first-row {
+        display: flex;
+        gap: 10px;
+
+        .original-price {
+          text-decoration: line-through;
+        }
+      }
+
+      /* Estilos para la segunda fila */
+      .second-row {
+        display: flex;
+        gap: 10px;
+
+        p {
+          background-color: #cfcece;
+        }
+      }
+    }
+  }
+
+  @media screen and (max-width: 768px) {
+    flex-direction: column;
+  }
+}

@@ -19,23 +19,11 @@
 </div> -->
 
 <div *ngIf="productsList">
-
-  <product-list-category />
-  <!-- <div class="section">
+  <!-- <product-list-category /> -->
+  <div class="section">
     <h3 class="sectionTitle">{{ categoryName }}</h3>
 
-    <div class="gridContent">
-      <div class="card product-card" *ngFor="let product of productsList.products">
-        <img [src]="product.thumbnail" alt="{{ product.title }}" />
-        <p>Brand : {{product.brand}}</p>
-        <p>{{ product.title }}</p>
+    <products-list-products [productsList]=productsList />
 
-        <div class="card-bottom">
-          <p class="text-line">{{ product.price }}$</p>
-          <p>{{ (product.price - (product.price * product.discountPercentage/100)) | number:'1.2-2'}}</p>
-          <p>({{ product.discountPercentage }}% descuento)</p>
-        </div>
-      </div>
-    </div>
-  </div> -->
+  </div>
 </div>

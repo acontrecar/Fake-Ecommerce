@@ -2,7 +2,10 @@ import { Injectable, inject } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { CategoryProducts } from '../interfaces/category-products.interfaces';
-import { ProductsByCategory } from '../interfaces/productsByCategory.interface';
+import {
+  Product,
+  ProductsByCategory,
+} from '../interfaces/productsByCategory.interface';
 
 @Injectable({
   providedIn: 'root',
@@ -47,5 +50,9 @@ export class ProductsService {
     });
 
     return this.categoryProduct;
+  }
+
+  public getProductById(id: string): Observable<Product> {
+    return this.http.get<Product>(`${this.baseUrl}/products/${id}`);
   }
 }
