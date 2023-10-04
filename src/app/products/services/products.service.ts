@@ -16,6 +16,7 @@ export class ProductsService {
   private http = inject(HttpClient);
 
   public categoryProduct: CategoryProducts[] = [];
+  public products: Product[] = [];
 
   public getAllCategories(): Observable<string[]> {
     return this.http.get<string[]>(`${this.baseUrl}/products/categories`);
@@ -54,5 +55,21 @@ export class ProductsService {
 
   public getProductById(id: string): Observable<Product> {
     return this.http.get<Product>(`${this.baseUrl}/products/${id}`);
+  }
+
+  public getProducts(): Observable<ProductsByCategory> {
+    return this.http.get<ProductsByCategory>(`${this.baseUrl}/products`);
+  }
+
+  public getProductsBySearchTerm(searchTerm: string): Product[] {
+    this.getProducts().subscribe((productsArray: ProductsByCategory) => {
+      this.products = productsArray.products.filter((products) => {
+        return products.title.toLowerCase().includes(searchTerm.toLowerCase());
+      });
+
+      console.log(searchTerm, this.products);
+    });
+
+    return this.products;
   }
 }

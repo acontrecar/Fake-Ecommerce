@@ -7,6 +7,7 @@ import { HomePageComponent } from './pages/home-page/home-page.component';
 import { ListProductsComponent } from './components/list-products/list-products.component';
 import { ProductPageComponent } from './pages/product-page/product-page.component';
 import { FormsModule } from '@angular/forms';
+import { ProductsFilterComponent } from './pages/products-filter/products-filter.component';
 
 @NgModule({
   declarations: [
@@ -14,6 +15,7 @@ import { FormsModule } from '@angular/forms';
     HomePageComponent,
     ListProductsComponent,
     ProductPageComponent,
+    ProductsFilterComponent,
   ],
   imports: [CommonModule, ProductsRoutingModule, FormsModule],
 })
