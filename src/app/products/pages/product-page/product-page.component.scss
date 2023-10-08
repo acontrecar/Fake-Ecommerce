@@ -13,7 +13,8 @@
     }
 
     .secondary-images {
-      display: flex;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
       gap: 10px;
 
       img {
@@ -134,9 +135,18 @@
         }
       }
     }
+
+    @media screen and (max-width: 768px) {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
   }
 
   @media screen and (max-width: 768px) {
     flex-direction: column;
+
+    align-items: center;
   }
 }

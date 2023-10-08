@@ -2,9 +2,11 @@
   <nav>
     <img (click)="toggleSidebar()" src="../../../assets/hamburgerMenu.svg" alt="">
 
+    <img (click)="nagivateHouse()" src="../../../../assets/house.svg" alt="">
     <shared-search-input />
 
-    <img src="../../../assets/shoppingCart.svg" alt="">
+    <img (click)="toggleCartAside()" src="../../../assets/shoppingCart.svg" alt="">
+
 
   </nav>
 
@@ -21,4 +23,10 @@
       </li>
     </ul>
   </div>
+
+
+  <div class="shopping-aside" [ngClass]="{'open' : isCartOpen()}">
+    <shopping-cart-aside />
+  </div>
+
 </div>

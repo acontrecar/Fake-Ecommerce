@@ -9,9 +9,10 @@ import { NavSideBarComponent } from './shared/pages/nav-side-bar/nav-side-bar.co
 import { HomePageComponent } from './products/pages/home-page/home-page.component';
 import { ProductsModule } from './products/products.module';
 import { SearchInputComponent } from './shared/components/search-input/search-input.component';
+import { ShoppingCartAsideComponent } from './shared/components/shopping-cart-aside/shopping-cart-aside.component';
 
 @NgModule({
-  declarations: [AppComponent, LayoutComponent, NavSideBarComponent, SearchInputComponent],
+  declarations: [AppComponent, LayoutComponent, NavSideBarComponent, SearchInputComponent, ShoppingCartAsideComponent],
   imports: [BrowserModule, AppRoutingModule, HttpClientModule, ProductsModule],
   providers: [],
   bootstrap: [AppComponent],

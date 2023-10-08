@@ -1,0 +1,48 @@
+<div *ngIf="shoppingCart.items.length>0; else templateLoader">
+  <div class="content">
+    <h1>Mi cesta</h1>
+
+    <div class="content-products">
+      <div>
+        <div class="products" *ngFor="let product of shoppingCart.items">
+
+          <img class="img" [src]="product.thumbnail" [alt]="product.title" />
+
+          <div class="description">
+            <p class="title">{{product.title}}</p>
+            <p>{{product.description}}</p>
+            <p class="price">{{(product.price * product.quantity) | number}}$</p>
+            <p>Precio por unidad: {{product.price}}$</p>
+
+
+            <div class="buttons">
+              <button (click)="delete(product.productId)" class="btn-delete"><img class="delete-svg"
+                  src="../../../../assets/delete.svg" alt=""></button>
+              <button (click)="decrease(product.productId, 1)">-</button>
+              <input type="text" [(ngModel)]="product.quantity" />
+              <button (click)="increase(product.productId, 1)">+</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+      <div class="summary">
+        <h3>Resumen</h3>
+        <p>Productos: {{shoppingCart.totalItems}}</p>
+        <hr>
+        <p>Total: <span class="price">{{shoppingCart.totalCost | number}}$</span> </p>
+
+        <button>Realizar pedido</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<ng-template #templateLoader>
+  <h2>No esperes más para comprar nuestros productos...</h2>
+
+  <div class="loader-container">
+    <img class="imgLoader" src="../../../../assets/gifPato.gif" alt="">
+  </div>
+</ng-template>

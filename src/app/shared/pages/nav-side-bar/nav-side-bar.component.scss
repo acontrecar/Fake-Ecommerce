@@ -15,17 +15,16 @@ nav {
 }
 
 .sidebar {
-  padding-top: 13%;
+  padding-top: 5%;
   display: flex;
   flex-direction: column;
   position: fixed;
   top: 0;
   left: -250px;
   width: 250px;
-  height: 100vh;
   background-color: #cfcece;
   transition: left 0.3s ease;
-  justify-content: center;
+  justify-content: flex-start;
   overflow-y: auto;
 
   .titleImg {
@@ -77,4 +76,23 @@ nav {
   @media screen and (max-width: 470px) {
     width: 100%;
   }
+}
+
+.shopping-aside {
+  margin-top: 70px;
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  top: 0;
+  width: 250px;
+  background-color: #cfcece;
+  transition: left 0.3s ease;
+  justify-content: center;
+  overflow-y: auto;
+  right: -331px;
+  width: -331px;
+}
+
+.shopping-aside.open {
+  right: 0;
 }

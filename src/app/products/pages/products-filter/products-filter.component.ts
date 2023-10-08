@@ -19,8 +19,9 @@ export class ProductsFilterComponent implements OnInit {
       .pipe(debounceTime(600))
       .subscribe((term) => {
         if (!term) this.products = [];
-        this.products = this.productsService.getProductsBySearchTerm(term);
-        console.log(this.products);
+        this.productsService.getProductsBySearchTerm(term).subscribe((res) => {
+          this.products = res;
+        });
       });
   }
 }

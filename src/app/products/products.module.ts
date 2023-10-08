@@ -8,6 +8,7 @@ import { ListProductsComponent } from './components/list-products/list-products.
 import { ProductPageComponent } from './pages/product-page/product-page.component';
 import { FormsModule } from '@angular/forms';
 import { ProductsFilterComponent } from './pages/products-filter/products-filter.component';
+import { CartComponent } from './pages/cart/cart.component';
 
 @NgModule({
   declarations: [
@@ -16,6 +17,7 @@ import { ProductsFilterComponent } from './pages/products-filter/products-filter
     ListProductsComponent,
     ProductPageComponent,
     ProductsFilterComponent,
+    CartComponent,
   ],
   imports: [CommonModule, ProductsRoutingModule, FormsModule],
 })

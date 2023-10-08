@@ -1,6 +1,6 @@
 import { Injectable, inject } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { Observable, map } from 'rxjs';
 import { CategoryProducts } from '../interfaces/category-products.interfaces';
 import {
   Product,
@@ -61,15 +61,13 @@ export class ProductsService {
     return this.http.get<ProductsByCategory>(`${this.baseUrl}/products`);
   }
 
-  public getProductsBySearchTerm(searchTerm: string): Product[] {
-    this.getProducts().subscribe((productsArray: ProductsByCategory) => {
-      this.products = productsArray.products.filter((products) => {
-        return products.title.toLowerCase().includes(searchTerm.toLowerCase());
-      });
-
-      console.log(searchTerm, this.products);
-    });
-
-    return this.products;
+  public getProductsBySearchTerm(searchTerm: string): Observable<Product[]> {
+    return this.getProducts().pipe(
+      map((productsArray: ProductsByCategory) => {
+        return productsArray.products.filter((product) => {
+          return product.title.toLowerCase().includes(searchTerm.toLowerCase());
+        });
+      })
+    );
   }
 }
