@@ -18,7 +18,7 @@
             <div class="buttons">
               <button (click)="delete(product.productId)" class="btn-delete"><img class="delete-svg"
                   src="../../../../assets/delete.svg" alt=""></button>
-              <button (click)="decrease(product.productId, 1)">-</button>
+              <button (click)="decrease(product.productId, 1,product.quantity)">-</button>
               <input type="text" [(ngModel)]="product.quantity" />
               <button (click)="increase(product.productId, 1)">+</button>
             </div>
@@ -33,7 +33,7 @@
         <hr>
         <p>Total: <span class="price">{{shoppingCart.totalCost | number}}$</span> </p>
 
-        <button>Realizar pedido</button>
+        <button (click)="finished()">Realizar pedido</button>
       </div>
     </div>
   </div>

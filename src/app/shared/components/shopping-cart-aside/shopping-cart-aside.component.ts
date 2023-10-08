@@ -19,7 +19,16 @@ export class ShoppingCartAsideComponent implements OnInit {
   public globalService = inject(GlobalService);
 
   ngOnInit(): void {
-    this.shoppingCart = this.globalService.loadFromLocalStorage();
+    // this.shoppingCart = this.globalService.loadFromLocalStorage();
+    this.globalService.shoppingCart$.subscribe((shoppingCart: ShoppingCart) => {
+      console.log(shoppingCart);
+      this.shoppingCart = shoppingCart;
+    });
+    // this.globalService
+    //   .loadFromLocalStorageObservable()
+    //   .subscribe((shoppingCart: ShoppingCart) => {
+    //     this.shoppingCart = shoppingCart;
+    //   });
   }
 
   public toggleCart(): void {

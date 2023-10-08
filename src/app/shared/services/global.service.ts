@@ -17,6 +17,14 @@ export class GlobalService {
     totalCost: 0,
   };
 
+  private shoppingCartSubject = new BehaviorSubject<ShoppingCart>({
+    items: [],
+    totalCost: 0,
+    totalItems: 0,
+  });
+
+  public shoppingCart$ = this.shoppingCartSubject.asObservable();
+
   searchTerm(term: string) {
     this.router.navigate(['/product-filter']);
 
@@ -45,6 +53,7 @@ export class GlobalService {
       cartItem!.total += total;
       this.shoppingCart.totalCost += total;
       this.shoppingCart.totalItems += quantity;
+      this.shoppingCartSubject.next(this.shoppingCart);
       localStorage.setItem('shoppingCart', JSON.stringify(this.shoppingCart));
 
       return;
@@ -63,6 +72,7 @@ export class GlobalService {
     this.shoppingCart.items.push(cartItem);
     this.shoppingCart.totalCost += total;
     this.shoppingCart.totalItems += quantity;
+    this.shoppingCartSubject.next(this.shoppingCart);
 
     localStorage.setItem('shoppingCart', JSON.stringify(this.shoppingCart));
   }
@@ -76,6 +86,7 @@ export class GlobalService {
     cartItem!.total += cartItem!.price * quantity;
     this.shoppingCart.totalCost += cartItem!.price * quantity;
     this.shoppingCart.totalItems += quantity;
+    this.shoppingCartSubject.next(this.shoppingCart);
     localStorage.setItem('shoppingCart', JSON.stringify(this.shoppingCart));
   }
 
@@ -88,6 +99,7 @@ export class GlobalService {
     cartItem!.total -= cartItem!.price * quantity;
     this.shoppingCart.totalCost -= cartItem!.price * quantity;
     this.shoppingCart.totalItems -= quantity;
+    this.shoppingCartSubject.next(this.shoppingCart);
     localStorage.setItem('shoppingCart', JSON.stringify(this.shoppingCart));
   }
 
@@ -101,6 +113,7 @@ export class GlobalService {
     this.shoppingCart.items = this.shoppingCart.items.filter(
       (item) => item.productId !== productId
     );
+    this.shoppingCartSubject.next(this.shoppingCart);
     localStorage.setItem('shoppingCart', JSON.stringify(this.shoppingCart));
   }
 
@@ -109,5 +122,18 @@ export class GlobalService {
     this.shoppingCart = JSON.parse(localStorage.getItem('shoppingCart')!);
 
     return this.shoppingCart;
+  }
+
+  public loadFromLocalStorageObservable(): Observable<ShoppingCart> {
+    this.shoppingCart = JSON.parse(localStorage.getItem('shoppingCart')!);
+    this.shoppingCartSubject.next(this.shoppingCart);
+    return this.shoppingCartSubject.asObservable();
+  }
+  public finish(): void {
+    this.shoppingCart.items = [];
+    this.shoppingCart.totalCost = 0;
+    this.shoppingCart.totalItems = 0;
+    this.shoppingCartSubject.next(this.shoppingCart);
+    localStorage.setItem('shoppingCart', JSON.stringify(this.shoppingCart));
   }
 }
