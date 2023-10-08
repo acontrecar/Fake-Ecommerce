@@ -1,4 +1,4 @@
-<div *ngIf="product">
+<div *ngIf="product; else templateLoader">
   <div class="grid">
     <div class="images">
       <div class="main-image">
@@ -45,3 +45,9 @@
     </div>
   </div>
 </div>
+
+<ng-template #templateLoader>
+  <div class="loader-container">
+    <img class="imgLoader" src="../../../../assets/gifPato.gif" alt="">
+  </div>
+</ng-template>

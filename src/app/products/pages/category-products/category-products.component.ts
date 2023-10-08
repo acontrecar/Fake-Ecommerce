@@ -36,7 +36,6 @@ export class CategoryProductsComponent implements OnInit {
   public getCategoryName(): void {
     this.activatedRoute.params.subscribe(({ categoryName }) => {
       this.categoryName = categoryName;
-      console.log(categoryName);
     });
   }
 }

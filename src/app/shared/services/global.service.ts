@@ -28,9 +28,6 @@ export class GlobalService {
   }
 
   public addProductToCart(product: Product, quantity: number) {
-    console.log('Product:', product);
-    console.log('Quantity:', quantity);
-
     const price: number = parseFloat(
       (
         product.price -
@@ -49,7 +46,7 @@ export class GlobalService {
       this.shoppingCart.totalCost += total;
       this.shoppingCart.totalItems += quantity;
       localStorage.setItem('shoppingCart', JSON.stringify(this.shoppingCart));
-      console.log('Cart:', cartItem);
+
       return;
     }
 

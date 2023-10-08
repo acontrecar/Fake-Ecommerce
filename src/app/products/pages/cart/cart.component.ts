@@ -21,7 +21,6 @@ export class CartComponent implements OnInit {
 
   ngOnInit(): void {
     this.shoppingCart = this.globalService.loadFromLocalStorage();
-    console.log(this.shoppingCart);
   }
 
   public increase(productId: number, quantity: number): void {

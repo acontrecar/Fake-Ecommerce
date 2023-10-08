@@ -36,8 +36,6 @@ export class ProductsService {
     this.getAllCategories().subscribe((categoriesResponse: string[]) => {
       categories = categoriesResponse;
 
-      // console.log(categories);
-
       categories.forEach((category) => {
         this.getProductsByCategory(category).subscribe(
           (products: ProductsByCategory) => {

@@ -12,8 +12,4 @@ import {
 export class ListProductsComponent {
   @Input()
   public productsList?: Product[];
-
-  public paco() {
-    console.log('paco');
-  }
 }

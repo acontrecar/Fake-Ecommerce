@@ -18,7 +18,5 @@ export class HomePageComponent {
     this.categoryProducts.set(
       this.productsService.getAllProductsAndCategories()
     );
-
-    console.log(this.categoryProducts());
   }
 }

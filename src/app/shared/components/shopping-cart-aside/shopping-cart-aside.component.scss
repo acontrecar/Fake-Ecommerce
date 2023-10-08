@@ -5,6 +5,10 @@
   .content-card {
     padding-left: 10%;
     padding-right: 10%;
+    max-height: 400px; /* Ajusta la altura máxima según tus necesidades */
+
+    /* Agrega overflow-y para mostrar la barra de desplazamiento cuando sea necesario */
+    overflow-y: auto;
 
     .btn {
       margin-top: 5%;

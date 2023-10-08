@@ -27,14 +27,10 @@ export class ProductPageComponent implements OnInit {
 
   public increase(quantity: number): void {
     if (this.quantity + quantity <= this.maxQuantity) this.quantity += quantity;
-
-    console.log(this.quantity);
   }
 
   public decrease(quantity: number): void {
     if (this.quantity - quantity >= 1) this.quantity -= quantity;
-
-    console.log(quantity);
   }
 
   public addToCart(product: Product): void {

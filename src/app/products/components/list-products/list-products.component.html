@@ -1,7 +1,6 @@
 <div class="gridContent" *ngIf="productsList; else templateLoader">
   <div [routerLink]="['/product', product.id]" class="card product-card" *ngFor="let product of productsList">
-    <img *ngIf="!product.thumbnail" src="../../../../assets/gifPato.gif" alt="">
-    <img *ngIf="product.thumbnail" [src]="product.thumbnail" alt="{{ product.title }}" />
+    <img [src]="product.thumbnail" alt="{{ product.title }}" />
     <p>Brand : {{product.brand}}</p>
     <p>{{ product.title }}</p>
 

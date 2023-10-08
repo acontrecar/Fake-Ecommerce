@@ -1,26 +1,35 @@
 <div class="content" *ngIf="shoppingCart">
 
-  <h3 class="title">
-    Mi cesta
-  </h3>
-  <div class="content-card">
-    <div class="card" *ngFor="let product of shoppingCart.items">
-      <img [src]="product.thumbnail" alt="No existe">
-      <div class="description">
-        <p>{{product.title}}</p>
-        <p><strong>{{product.price}}$</strong></p>
-        <p>Unidades: {{product.quantity}}</p>
+  <div *ngIf="shoppingCart.items.length>0;else templateName">
+    <h3 class="title">
+      Mi cesta
+    </h3>
+    <div class="content-card">
+      <div class="card" *ngFor="let product of shoppingCart.items">
+        <img [src]="product.thumbnail" alt="No existe">
+        <div class="description">
+          <p>{{product.title}}</p>
+          <p><strong>{{product.price}}$</strong></p>
+          <p>Unidades: {{product.quantity}}</p>
+        </div>
+
+        <hr>
       </div>
 
-      <hr>
+      <div class="aditional-information">
+        <p>Unidades totales : {{shoppingCart.totalItems}} </p>
+        <p>Total : <strong>{{shoppingCart.totalCost | number}}$</strong> </p>
+      </div>
+
+
+      <button class="btn" (click)="toggleCart()">Ver articulos</button>
     </div>
-
-    <div class="aditional-information">
-      <p>Unidades totales : {{shoppingCart.totalItems}} </p>
-      <p>Total : <strong>{{shoppingCart.totalCost | number}}$</strong> </p>
-    </div>
-
-
-    <button class="btn" (click)="toggleCart()">Ver articulos</button>
   </div>
+
+  <ng-template #templateName>
+    <div class="empty-cart">
+      <p>La cesta esta vacia</p>
+    </div>
+  </ng-template>
+
 </div>
