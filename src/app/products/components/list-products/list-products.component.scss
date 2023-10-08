@@ -1,10 +1,10 @@
 .gridContent {
   display: grid;
-  grid-template-columns: repeat(4, 1fr); // Grid de 4 columnas
-  gap: 20px; // Espacio entre tarjetas
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
 
   .product-card {
-    width: 100%; // Cada tarjeta ocupa el 100% del espacio de la columna
+    width: 100%;
     box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
     padding: 2%;
     text-align: center;

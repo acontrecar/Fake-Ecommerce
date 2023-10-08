@@ -16,9 +16,6 @@ export class SearchInputComponent {
   public globalService = inject(GlobalService);
 
   public onKeyPress(searchTerm: string) {
-    // this.products = this.productsService.getProductsBySearchTerm(searchTerm);
-    // this.router.navigate(['/product-filter']);
-    // /this.searchTerm.emit(searchTerm);
     this.globalService.searchTerm(searchTerm);
   }
 }

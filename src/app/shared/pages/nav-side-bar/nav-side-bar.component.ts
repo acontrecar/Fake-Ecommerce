@@ -32,7 +32,6 @@ export class NavSideBarComponent implements OnInit {
   }
 
   public closeSidebar(): void {
-    // cart;
     this.isSidebarOpen.set(!this.isSidebarOpen());
   }
 
