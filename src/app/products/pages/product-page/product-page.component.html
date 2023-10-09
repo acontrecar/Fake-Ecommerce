@@ -34,13 +34,13 @@
       <div class="quantity">
         <div class="quantity-input">
           <button (click)="decrease(1)">-</button>
-          <input type="text" [(ngModel)]="quantity" />
+          <input type="text" [(ngModel)]="quantity" disabled />
           <button (click)="increase(1)">+</button>
         </div>
       </div>
 
       <div class="add-cart">
-        <button class="btn-add-cart" (click)="addToCart(product)">Add to cart</button>
+        <button (click)="addToCart(product)">Add to cart</button>
       </div>
     </div>
   </div>

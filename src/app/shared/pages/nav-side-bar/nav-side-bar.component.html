@@ -5,7 +5,11 @@
     <img (click)="nagivateHouse()" src="../../../../assets/house.svg" alt="">
     <shared-search-input />
 
-    <img (click)="toggleCartAside()" src="../../../assets/shoppingCart.svg" alt="">
+    <div class="cart">
+      <img (click)="toggleCartAside()" src="../../../assets/shoppingCart.svg" alt="">
+      <span class="cart-counter">{{numberOfProducts}}</span>
+    </div>
+
 
 
   </nav>
@@ -19,7 +23,8 @@
     </div>
 
     <ul class="category-list">
-      <li *ngFor="let item of categories()" class="category-list-item"><a [routerLink]="['category', item]">{{item}}</a>
+      <li *ngFor="let item of categories()" class="category-list-item"><a [routerLink]="['category', item]"
+          (click)="closeSidebar()">{{item}}</a>
       </li>
     </ul>
   </div>

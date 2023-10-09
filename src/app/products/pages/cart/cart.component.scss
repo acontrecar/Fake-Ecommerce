@@ -11,7 +11,8 @@
       margin: 0 auto;
       padding: 0 50px 10px;
       border: 1px solid #ccc;
-      font-size: 85%;
+      font-size: 97%;
+      text-transform: capitalize;
       margin-bottom: 5%;
 
       .description {
@@ -40,6 +41,8 @@
           }
 
           button {
+            height: 30px;
+            width: 36px;
             background-color: #8f8f8f;
             color: white;
             border: none;
@@ -85,7 +88,7 @@
     align-items: center;
     width: 50%;
     border: 1px solid #ccc;
-    font-size: 80%;
+    font-size: 90%;
     margin-left: 5%;
     max-height: 165px;
     p {

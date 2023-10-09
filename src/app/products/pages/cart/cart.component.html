@@ -19,7 +19,7 @@
               <button (click)="delete(product.productId)" class="btn-delete"><img class="delete-svg"
                   src="../../../../assets/delete.svg" alt=""></button>
               <button (click)="decrease(product.productId, 1,product.quantity)">-</button>
-              <input type="text" [(ngModel)]="product.quantity" />
+              <input type="text" [(ngModel)]="product.quantity" disabled />
               <button (click)="increase(product.productId, 1)">+</button>
             </div>
           </div>
