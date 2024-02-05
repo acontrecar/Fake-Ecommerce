@@ -34,6 +34,7 @@ nav {
 }
 
 .sidebar {
+  transition: 0.3s;
   padding-top: 5%;
   display: flex;
   flex-direction: column;
@@ -71,6 +72,7 @@ nav {
     padding: 0;
     margin-bottom: 15vh;
     overflow-y: scroll;
+    padding-bottom: 5%;
 
     .category-list-item {
       padding: 10px;
