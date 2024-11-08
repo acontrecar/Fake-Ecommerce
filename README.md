@@ -1,8 +1,8 @@
 # FakeEcommerce
 
-![fake-ecommerce](https://github.com/acontrecar/Fake-Ecommerce/src/assets/localhost_4200_.png)
+![fake-ecommerce](https://fake-ecommerce-antonio.netlify.app/assets/localhost_4200_.png)
 
-Este proyecto ha sido generado con [Angular CLI](https://github.com/angular/angular-cli) version 16.1.0.
+Este proyecto ha sido generado con [Angular CLI](https://github.com/angular/angular-cli) version 16.1.0 y con la siguiente [API](https://dummyjson.com/).
 
 Para desplegarlo necesitarías ejecutar:
 
