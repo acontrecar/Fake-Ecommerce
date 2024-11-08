@@ -8,7 +8,3 @@ Para desplegarlo necesitarías ejecutar:
 
 1. `npm install`
 2. `ng serve`
-
-## Live demo
-
-[Demo](https://marcpancorbo.github.io/rawg-angular/)

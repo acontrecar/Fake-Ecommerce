@@ -19,7 +19,7 @@ export class ProductsService {
   public products: Product[] = [];
 
   public getAllCategories(): Observable<string[]> {
-    return this.http.get<string[]>(`${this.baseUrl}/products/categories`);
+    return this.http.get<string[]>(`${this.baseUrl}/products/category-list`);
   }
 
   public getProductsByCategory(
